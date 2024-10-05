@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cydyyha1hafqb"]
+
+[ext_resource type="Script" path="res://new_script.gd" id="1_p0yej"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_e4kto"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmf2e"]
+next_pass = SubResource("FogMaterial_e4kto")
+metallic = 1.0
+emission_enabled = true
+
+[node name="Espacio" type="Node3D"]
+script = ExtResource("1_p0yej")
+
+[node name="Tierra" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 268.998)
+radius = 10.0
+material = SubResource("StandardMaterial3D_gmf2e")
+
+[node name="Sol" type="CSGSphere3D" parent="."]
+radius = 100.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0542297, -0.54216, 386.399)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.7974, 283.007)
+light_color = Color(1, 1, 0.12549, 1)
+shadow_enabled = true
